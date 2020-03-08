@@ -68,9 +68,9 @@ class ProblemController {
     }
 
     const reasonableCancelments = [
-      'Lost delivery',
-      'Wrong address',
-      'Limit of tries',
+      'Encomenda perdida',
+      'Endereço errado',
+      'Limite de tentativas',
     ];
 
     if (!reasonableCancelments.includes(problem.description)) {
@@ -87,7 +87,9 @@ class ProblemController {
     const deliver = await Deliver.findByPk(problem.deliver.id);
 
     await problem.destroy();
-    await deliver.destroy();
+    await deliver.update({
+      canceled_at: new Date(),
+    });
 
     return res.json(problem.deliver.id);
   }
