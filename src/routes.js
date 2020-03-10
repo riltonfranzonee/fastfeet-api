@@ -22,7 +22,7 @@ routes.post('/sessions', SessionController.store);
 
 routes.get('/deliveryman/:id/deliveries', TransporterController.index); // query param ?delivered= yes/not
 routes.put('/deliver/:id', TransporterController.update);
-routes.post('/files/signature_id', upload.single('file'), FileController.store);
+// routes.post('/files/signature_id', upload.single('file'), FileController.store);
 
 routes.get('/delivery/:id/problems', ProblemController.index);
 routes.post('/delivery/:id/problems', ProblemController.store);
