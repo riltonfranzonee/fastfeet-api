@@ -88,7 +88,6 @@ class ProblemController {
 
     const deliver = await Deliver.findByPk(problem.deliver.id);
 
-    await problem.destroy();
     await deliver.update({
       canceled_at: new Date(),
     });
