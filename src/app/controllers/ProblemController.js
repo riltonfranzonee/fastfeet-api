@@ -68,9 +68,11 @@ class ProblemController {
     }
 
     const reasonableCancelments = [
-      'Encomenda perdida',
+      'Objeto perdido',
       'Endereço errado',
       'Limite de tentativas',
+      'Objeto roubado',
+      'Objeto danificado',
     ];
 
     if (!reasonableCancelments.includes(problem.description)) {
