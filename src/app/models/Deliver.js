@@ -26,7 +26,7 @@ class Deliver extends Model {
       as: 'deliveryman',
     });
     this.belongsTo(models.File, {
-      foreingKey: 'signature_id',
+      foreingKey: 'signatureId',
       as: 'signature',
     });
   }

@@ -96,6 +96,11 @@ class DeliverController {
           as: 'deliveryman',
           attributes: ['id', 'name'],
         },
+        {
+          model: File,
+          as: 'signature',
+          attributes: ['id', 'path', 'url'],
+        },
       ],
     });
 

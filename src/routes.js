@@ -35,6 +35,7 @@ routes.get('/delivery/problems', async (req, res) => {
   });
   res.json(problems);
 }); // query param page
+routes.post('/files', upload.single('file'), FileController.store);
 
 routes.use(authMiddleware);
 
@@ -54,7 +55,5 @@ routes.post('/deliver', DeliverController.store);
 routes.get('/deliver', DeliverController.index); // query param ?q={productname} and page
 routes.put('/deliver', DeliverController.update);
 routes.delete('/deliver', DeliverController.delete);
-
-routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;

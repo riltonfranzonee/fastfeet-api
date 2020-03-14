@@ -90,19 +90,6 @@ class DeliverymanController {
 
     const deliveryman = await Deliveryman.findByPk(req.body.id);
 
-    // check if the admin wants to change to an email that is alerady registered
-    const isRegistered = await Deliveryman.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
-
-    if (isRegistered) {
-      return res
-        .status(400)
-        .json({ error: 'The email provided is already registered' });
-    }
-
     const updatedDeliveryman = await deliveryman.update(req.body);
 
     return res.json(updatedDeliveryman);
