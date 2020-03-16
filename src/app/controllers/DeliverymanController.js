@@ -5,7 +5,25 @@ import File from '../models/File';
 
 class DeliverymanController {
   async index(req, res) {
-    const { page = 1, q } = req.query;
+    const { page = 1, q, id } = req.query;
+
+    // this is for deliveryman who is accessing from mobile
+    if (id) {
+      const deliverymens = await Deliveryman.findOne({
+        where: {
+          id,
+        },
+        attributes: ['id', 'name', 'email', 'avatar_id', 'created_at'],
+        include: [
+          {
+            model: File,
+            as: 'avatar',
+            attributes: ['name', 'path', 'url'],
+          },
+        ],
+      });
+      return res.json(deliverymens);
+    }
 
     // check if user passed the deliveryman name
     if (q) {

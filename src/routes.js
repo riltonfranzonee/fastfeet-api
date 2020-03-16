@@ -37,6 +37,8 @@ routes.get('/delivery/problems', async (req, res) => {
 }); // query param page
 routes.post('/files', upload.single('file'), FileController.store);
 
+routes.get('/deliveryman', DeliverymanController.index); // query param ?q={name} and page
+
 routes.use(authMiddleware);
 
 routes.delete('/problem/:id/cancel-delivery', ProblemController.delete);
@@ -47,7 +49,6 @@ routes.put('/recipient', RecipientController.update);
 routes.delete('/recipient', RecipientController.delete);
 
 routes.post('/deliveryman', DeliverymanController.store);
-routes.get('/deliveryman', DeliverymanController.index); // query param ?q={name} and page
 routes.put('/deliveryman', DeliverymanController.update);
 routes.delete('/deliveryman', DeliverymanController.delete);
 

@@ -3,6 +3,8 @@ import { Op } from 'sequelize';
 import { getHours, parseISO, startOfDay, endOfDay } from 'date-fns';
 
 import Deliver from '../models/Deliver';
+import Recipient from '../models/Recipient';
+import File from '../models/File';
 
 class TransporterController {
   async index(req, res) {
@@ -17,6 +19,35 @@ class TransporterController {
           canceled_at: null,
           end_date: null,
         },
+        order: ['created_at'],
+        attributes: [
+          'id',
+          'product',
+          'canceled_at',
+          'start_date',
+          'end_date',
+          'signatureId',
+        ],
+        include: [
+          {
+            model: Recipient,
+            as: 'recipient',
+            attributes: [
+              'id',
+              'name',
+              'state',
+              'city',
+              'street',
+              'zip',
+              'number',
+            ],
+          },
+          {
+            model: File,
+            as: 'signature',
+            attributes: ['id', 'path', 'url'],
+          },
+        ],
       });
 
       return res.json(deliver);
@@ -30,12 +61,74 @@ class TransporterController {
             [Op.ne]: null,
           },
         },
+        order: ['created_at'],
+        attributes: [
+          'id',
+          'product',
+          'canceled_at',
+          'start_date',
+          'end_date',
+          'signatureId',
+        ],
+        include: [
+          {
+            model: Recipient,
+            as: 'recipient',
+            attributes: [
+              'id',
+              'name',
+              'state',
+              'city',
+              'street',
+              'zip',
+              'number',
+            ],
+          },
+          {
+            model: File,
+            as: 'signature',
+            attributes: ['id', 'path', 'url'],
+          },
+        ],
       });
       return res.json(deliver);
     }
 
     // if no option is provided, then List all delivers
-    const deliver = await Deliver.findAll({ where: { deliveryman_id: id } });
+    const deliver = await Deliver.findAll({
+      where: {
+        deliveryman_id: id,
+      },
+      order: ['created_at'],
+      attributes: [
+        'id',
+        'product',
+        'canceled_at',
+        'start_date',
+        'end_date',
+        'signatureId',
+      ],
+      include: [
+        {
+          model: Recipient,
+          as: 'recipient',
+          attributes: [
+            'id',
+            'name',
+            'state',
+            'city',
+            'street',
+            'zip',
+            'number',
+          ],
+        },
+        {
+          model: File,
+          as: 'signature',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
+    });
     return res.json(deliver);
   }
 
