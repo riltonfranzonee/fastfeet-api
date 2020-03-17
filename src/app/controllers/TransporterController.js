@@ -22,6 +22,7 @@ class TransporterController {
         order: ['created_at'],
         attributes: [
           'id',
+          'created_at',
           'product',
           'canceled_at',
           'start_date',
@@ -64,6 +65,7 @@ class TransporterController {
         order: ['created_at'],
         attributes: [
           'id',
+          'created_at',
           'product',
           'canceled_at',
           'start_date',
@@ -102,6 +104,7 @@ class TransporterController {
       order: ['created_at'],
       attributes: [
         'id',
+        'created_at',
         'product',
         'canceled_at',
         'start_date',
