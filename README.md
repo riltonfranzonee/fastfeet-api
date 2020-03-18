@@ -34,10 +34,10 @@ To clone and run this application, you'll need Git, NodeJS and Yarn. Input thees
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/riltonfranzonee/fastfeet
+$ git clone https://github.com/riltonfranzonee/fastfeet-api
 
 # Go into the repository
-$ cd fastfeet
+$ cd fastfeet-api
 
 # Install dependencies
 $ yarn
