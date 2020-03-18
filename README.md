@@ -4,16 +4,16 @@
 </h1>
 
 <p align="center">
-🚚 Shipping company application that connects deliverymen and recipients - RESTful API made with Node.js
+🚚 Full control system for a shipping company - RESTful API made with Node.js
 </p>
 
-:rocket: The Challenge
+🚚 About FastFeet
 ------------------
-This project is a challenge proposed during [**Rocketseat**](https://rocketseat.com.br/) GoStack bootcamp. The main objective is to create a backend application for an imaginary shipping company. Along with this server, I'll be developing the front-end side with React and the mobile application with React Native.
+This project is a full control system for a fictional shipping company called FastFeet. The full system has a [**web version**](https://github.com/riltonfranzonee/fastfeet), where the admin is able to take control of all processes, such as list/create/edit/delete/update deliveries, deliverymen, recipients and problems. The application also has a [**mobile version**](https://github.com/riltonfranzonee/fastfeet-mobile), where the deliveryman is able to list all his deliveries filtering by pending or delivered, register a problem during the process, and also confirm the deliver by sending a picture of the recipient's signature.
 
 :wrench: Technologies used:
 ----------------------
-In this project the following technologies and libraries were used:
+This RESTful API has a great level of complexity, combinig different types of databases, user authentication, email firing, file upload and a lot of CRUD's. To help me with all this work I used the following technologies: 
 
 - [**Insomnia**](https://insomnia.rest/)
 - [**NodeJS**](https://nodejs.org/en/)
@@ -21,6 +21,7 @@ In this project the following technologies and libraries were used:
 - [**Nodemon**](https://nodemon.io/)
 - [**Docker**](https://www.docker.com/)
 - [**PostgreSQL**](https://www.postgresql.org/)
+- [**Redis**](https://redis.io/)
 - [**Sequelize**](https://sequelize.org/)
 - [**Yup**](https://github.com/jquense/yup)
 - [**jwt**](https://www.npmjs.com/package/jsonwebtoken/)
