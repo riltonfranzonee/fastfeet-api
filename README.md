@@ -11,7 +11,7 @@ Full control system for a shipping company - RESTful API made with Node.js
 ------------------
 This project is a full control system for a fictional shipping company called FastFeet. The full system has a [**web version**](https://github.com/riltonfranzonee/fastfeet) made with ReactJS, where the admin is able to take control of all processes, such as list/create/edit/delete/update deliveries, deliverymen, recipients and problems. The application also has a [**mobile version**](https://github.com/riltonfranzonee/fastfeet-mobile) made with React Native, where the deliveryman is able to list all his deliveries filtering by pending or delivered, register a problem during the process and also confirm the deliver by sending a picture of the recipient's signature. All this system is served by a [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) made with Node.js 
 
-:wrench: Technologies used:
+:wrench: Used technologies:
 ----------------------
 This RESTful API has a great level of complexity, combinig different types of databases, user authentication, email firing, file upload and a lot of CRUD's. To help me with all this work I used the following technologies: 
 
