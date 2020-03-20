@@ -30,7 +30,7 @@ This RESTful API has a great level of complexity, combinig different types of da
 - [**date-fns**](https://date-fns.org/docs/Getting-Started)
 
 ## :information_source: How to use this project
-To clone and run this application, you'll need Git, NodeJS and Yarn. Input theese lines in your command line:
+To clone and run this application, you'll need Git, NodeJS and Yarn. Input these lines in your command line:
 
 ```bash
 # Clone this repository
