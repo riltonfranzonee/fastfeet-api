@@ -37,7 +37,44 @@ The first thing you need to do is to run these two containers on your machine:
 - `docker run --name redisfastfeet -p 6379:6379 -d -t redis:alpine`;
 - `docker run --name some-postgres -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres`;
 
-Then you just need to run the following commands:
+Now you must generate the admin who is gonna be able to access the functionalities in the [**web version**](https://github.com/riltonfranzonee/fastfeet)
+
+So the first thing you are gonna do is to make use of [sequelize seeds (https://sequelize.org/master/manual/migrations.html#creating-first-seed), this will help you to create registers automatically in the database.
+
+To create the seed run the command: 
+
+    yarn sequelize seed:generate --name admin-user
+
+In the created file inside of `src/database/seeds` add the code related to the register of an admin user:
+
+    const bcrypt = require("bcryptjs");
+
+    module.exports = {
+      up: QueryInterface => {
+        return QueryInterface.bulkInsert(
+          "users",
+          [
+            {
+              name: "Distribuidora FastFeet",
+              email: "admin@fastfeet.com",
+              password_hash: bcrypt.hashSync("123456", 8),
+              created_at: new Date(),
+              updated_at: new Date()
+            }
+          ],
+          {}
+        );
+      },
+
+      down: () => {}
+    };
+    
+Now run:
+
+    yarn sequelize db:seed:all
+
+
+Lastly run the following commands:
 
 ```bash
 # Clone this repository
