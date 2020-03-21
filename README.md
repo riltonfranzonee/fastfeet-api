@@ -30,7 +30,14 @@ This RESTful API has a great level of complexity, combinig different types of da
 - [**date-fns**](https://date-fns.org/docs/Getting-Started)
 
 ## :information_source: How to use this project
-To clone and run this application, you'll need Git, NodeJS and Yarn. Input these lines in your command line:
+To clone and run this application, you'll need Git, NodeJS, Yarn and Docker.
+
+The first thing you need to do is to run these two containers on your machine:
+
+- `docker run --name redisfastfeet -p 6379:6379 -d -t redis:alpine`;
+- `docker run --name some-postgres -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres`;
+
+Then you just need to run the following commands:
 
 ```bash
 # Clone this repository
