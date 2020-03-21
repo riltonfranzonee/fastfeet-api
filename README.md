@@ -39,7 +39,7 @@ The first thing you need to do is to run these two containers on your machine:
 
 Now you must generate the admin who is gonna be able to access the functionalities in the [**web version**](https://github.com/riltonfranzonee/fastfeet)
 
-So the first thing you are gonna do is to make use of [sequelize seeds (https://sequelize.org/master/manual/migrations.html#creating-first-seed), this will help you to create registers automatically in the database.
+So the first thing you are gonna do is to make use of [sequelize seeds] (https://sequelize.org/master/manual/migrations.html#creating-first-seed), this will help you to create registers automatically in the database.
 
 To create the seed run the command: 
 
